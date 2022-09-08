@@ -33,3 +33,10 @@ def solve_diet(N):
   s.Minimize(s.Sum([f[i]*N[i][FCost] for i in range(nbF)]))        
   rc = s.Solve()
   return rc,ObjVal(s),SolVal(f)
+
+def main():
+  data = gen_diet_problem()
+  print(solve_diet(data))
+
+if __name__ == '__main__':
+    main()
